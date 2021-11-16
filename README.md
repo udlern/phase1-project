@@ -20,6 +20,10 @@ To access the API:
 Get word definitions
 Usage : The basic syntax of a URL request to the API is shown below:
 
+Then, assuming you have json-server installed globally, you can run this command to run the server:
+
+$ json-server --watch db.json
+
 https://api.dictionaryapi.dev/api/v2/entries/en/<word>
 
 As an example, to get definition of English word hello, you can send request to
