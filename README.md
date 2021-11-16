@@ -1,5 +1,7 @@
 # phase1-project
 
+This is a test!
+
 User Deliverables:
 
 As a user, I can type in a word into a search box
