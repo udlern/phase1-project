@@ -2,14 +2,15 @@
 <html>
   <head>
     <title>Wacky Search Functions</title>
-    <script defer type="text/javascript" src="./Sok.js"></script>
+    <script defer type="text/javascript" src="Sok.js"></script>
     <script defer type="text/javascript" src="Noa.js"></script>
     <link rel="stylesheet" href="index.css">
   </head>
   <body>
-    <h1>Online Dictionary</h1>
+    <h1 id="page-header">Welcome to the Eccentric Search Page!</h1>
+    <h1 id="dictionary-header">Online Dictionary</h1>
     <form id="search-form" class="search-form">
-      <label for="search-input">Search for information about a word!</label>
+      <label id="search-label" for="search-input">Search for information about a word!</label>
       <br />
       <input
         id="search-input"
@@ -21,7 +22,7 @@
     <button id="search-button">Search</button>
     <button id="reset-button">Reset Search</button>
     <div id="word-info">
-      <h2 id="word"></h2>
+      <h2 id="word"><span id="word-name-content"></span></h2>
       <h2 id="phonetics"></h2>
       <h2 id="origin"></h2>
       <div id="meaning-1">
@@ -47,5 +48,12 @@
       <button id="like-button">👍 Helpful</button>
       <button id="dislike-button">👎 Unhelpful</button>
     </div>
+    <div id="add">
+    <h1>Note Taking</h1>
+        <button class="add" id="add">
+            <i class="add-note"> Click here to add notes</i> 
+        </button>
+    </div>
   </body>
 </html>
+

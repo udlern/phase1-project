@@ -1,5 +1,6 @@
 const BASE_URL = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 const wordName = getEl("word");
+const wordNameContent = getEl('word-name-content')
 const wordPhonetics = getEl("phonetics");
 const wordOrigin = getEl("origin");
 const firstPartOfSpeech = getEl("part-of-speech-1");
@@ -29,17 +30,17 @@ function handleSearchButton(event) {
 }
 
 function displayWord(wordData) {
-    console.log(wordData)
   if (!Array.isArray(wordData)) {
     wordName.textContent = wordData.title;
     wordPhonetics.textContent = wordData.message;
   } else {
     const word = wordData[0];
-    wordName.textContent = `Word: ${word.word}`;
+    wordName.textContent = "Word: "
+    wordNameContent.textContent = word.word
     wordPhonetics.textContent = `Phonetic Spelling: ${word.phonetic}`;
     wordOrigin.textContent = `Word Origin: ${word.origin}`;
     firstMeaningHeading.textContent = 'First Meaning:'
-    firstPartOfSpeech.textContent = `Part of Speech: ${word.meanings[0].partOfSpeech}`;
+    firstPartOfSpeech.textContent = `Part of Speech: ${word.meanings[0].partOfSpeech}`
     firstDefinition.textContent = `Definition: ${word.meanings[0].definitions[0].definition}`;
     firstExample.textContent = `Example: "${word.meanings[0].definitions[0].example}"`;
     secondMeaningHeading.textContent = 'Second Meaning:'
