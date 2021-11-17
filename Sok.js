@@ -1,28 +1,27 @@
-// console.log('test1')
-// console.log('test2')
-// console.log('test3')
+const addBtn = document.getElementById("add");
+addBtn.addEventListener("click", () => {
+    addNewNote();
+});
 
-const API = 'https://api.dictionaryapi.dev/api/v2/entries/en/hello'
-
-// const API1 = 'https://api.dictionaryapi.dev/api/v2/entries/en/<word>'
-fetch(API)
-.then(res => res.json())
-.then(word => {
-    document.getElementById('definition').innerText = word.word
-})
-
-document
-.getElementById('search-form')
-.addEventListener('submit', addWord)
-
-document
-.getElementById('search-button')
-.addEventListener('submit', button)
-
-function button(event){
-    event.preventDefault()
+function addNewNote(text = "") {
+    const note = document.createElement("div");
+    note.innerHTML = `
+        <div class="notes">
+            <div class="tools">
+                <button class="delete">
+                <i>Delete</i>
+                </button>
+            </div>
+            <div class="main ${text ? "" : "hidden"}"></div>
+            <div class="space">
+            <textarea class="${text ? "hidden" : ""}"></textarea>
+            </div>
+        </div>
+    `
+    const deleteBtn = note.querySelector(".delete");
+    deleteBtn.addEventListener("click", () => {
+        note.remove();
+    });
+    document.body.appendChild(note);
 }
 
-function addWord(event){
-    event.preventDefault()
-}
