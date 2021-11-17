@@ -13,8 +13,7 @@ function addNewNote(text = "") {
                 </button>
             </div>
             <div class="main ${text ? "" : "hidden"}"></div>
-            <div class="space">
-            <textarea class="${text ? "hidden" : ""}"></textarea>
+            <textarea id="note-bar" class="${text ? "hidden" : ""}"></textarea>
             </div>
         </div>
     `

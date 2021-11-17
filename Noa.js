@@ -79,6 +79,7 @@ function handleResetButtonClick() {
   document.querySelector("#search-input").value = "";
   const wordInfoDiv = document.querySelector("#word-info");
   wordInfoDiv.innerHTML = "";
+  window.location.reload()
 }
 
 function getEl(id) {

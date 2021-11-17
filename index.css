@@ -1,23 +1,43 @@
-body {
-    background-image: url(background.jpeg)
+html {
+    background: url(background.jpeg) no-repeat center fixed;
+    background-size: cover;
+  }
+
+  #page-header {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
-#page-header {
-    text-align: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+#search-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 19px;
+  line-height: 25pt;
 }
 
-#dictionary-header {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+#search-input {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 19px;
 }
 
-#search-label, #search-input {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: bolder;
+#search-button,
+#reset-button,
+#like-button,
+#dislike-button {
+  line-height: 21px;
+  font-size: 15px;
 }
 
 #word {
-    text-decoration: underline;
+  text-decoration: underline;
 }
+
+#word-info > h2,
+#meaning-1 > h2,
+#meaning-2 > h2,
+#meaning-3 > h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  width: 600px;
+}
+
+
