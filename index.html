@@ -1,36 +1,49 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Wacky Search Functions</title>
+    <title>TODANTT</title>
     <script defer type="text/javascript" src="Sok.js"></script>
     <script defer type="text/javascript" src="Noa.js"></script>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1 id="page-header">Welcome to your TODANTT (trusty online dictionary and note taking tool)!</h1>
+    <h1 id="page-header">
+      Welcome to your TODANTT (trusty online dictionary and note taking tool)!
+    </h1>
+    <!-- <div id="flex-container"> -->
+    <!-- <div> -->
     <form id="search-form" class="search-form">
-      <label id="search-label" for="search-input">Search for information about a word ℹ️🔤</label>
-      <br>
+      <label id="search-label" for="search-input"
+        >Search for information about a word ℹ️🔤</label
+      >
+      <br />
       <input
         id="search-input"
         type="text"
         name="search"
-        placeholder="Type in a word...✏️" 
+        placeholder="Type in a word...✏️"
       />
-      <button id="search-button">Search</button>
+      <button id="search-button">Search 🔍</button>
     </form>
     <button id="reset-button">Reset Search</button>
     <div id="word-info">
-      <h2 id="word"><span id="word-name-content"></span></h2>
-      <h2 id="phonetics"></h2>
-      <h2 id="origin"></h2>
-      <div id="meaning-1">
-        <h2 id="first-meaning-heading"></h2>
-        <h2 id="part-of-speech-1"></h2>
-        <h2 id="definition-1"></h2>
-        <h2 id="example-1"></h2>
+      <h2 id="word" class="underline-word"></h2><h2 id="word-name-content" class="continue-sentence"></h2>
+      <br>
+      <h2 id="phonetics" class="underline-word"></h2><h2 id="phonetics-content" class="continue-sentence"></h2>
+      <br>
+      <h2 id="origin" class="underline-word"></h2><h2 id="origin-content" class="continue-sentence"></h2>
+      <br>
+      <h2 id="part-of-speech" class="underline-word"></h2><h2 id="part-of-speech-content" class="continue-sentence"></h2>
+      <br>
+      <h2 id="definition" class="underline-word"></h2><h2 id="definition-content" class="continue-sentence"></h2>
+      <br>
+      <h2 id="example" class="underline-word"></h2><h2 id="example-content" class="continue-sentence"></h2>
+      <br>
+      <h2 id="synonym" class="underline-word"></h2><h2 id="synonym-content" class="continue-sentence"></h2>
+      <br>
+      <h2 id="antonym" class="underline-word"></h2><h2 id="antonym-content" class="continue-sentence"></h2>
       </div>
-      <div id="meaning-2">
+      <!-- <div id="meaning-2">
         <h2 id="second-meaning-heading"></h2>
         <h2 id="part-of-speech-2"></h2>
         <h2 id="definition-2"></h2>
@@ -41,17 +54,20 @@
         <h2 id="part-of-speech-3"></h2>
         <h2 id="definition-3"></h2>
         <h2 id="example-3"></h2>
-      </div>
+      </div> -->
     </div>
     <div class="likes-section">
       <button id="like-button">👍 Helpful</button>
       <button id="dislike-button">👎 Unhelpful</button>
     </div>
+    <!-- </div> -->
+    <!-- <div> -->
     <div id="notes">
-        <button class="add" id="add">
-            <i class="add-note"> Click here to add notes</i> 
-        </button>
+      <button class="add" id="add">
+        <i class="add-note"> Click here to add notes</i>
+      </button>
     </div>
+    <!-- </div> -->
+    <!-- </div> -->
   </body>
 </html>
-

@@ -7,6 +7,9 @@ As a user, I can press the submit/search button to submit the word
 As a user, I will see the dictionary information about that word displaying below the search box
 As a user, I will be able to reset my input in the search box by clicking the reset button below the search box
 As a user, I will be able to like or dislike the information displayed in the browser if that was the information I needed
+As a user, I will be able to click the add a new note button to display however many note text boxes I click the button for
+As a user, I will be able to type notes into the text box
+As a user, I will be able to click the delete button and have my notes disappear from the browser
 
 Basic Story: a user can type in a word and get a variety of Oxford dictionary information about that word
 Core Features: user typing in the word in input text box, submitting the word, fetching word data from API, resetting input text box after submit

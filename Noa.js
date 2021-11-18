@@ -2,17 +2,26 @@ const BASE_URL = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 const wordName = getEl("word");
 const wordNameContent = getEl('word-name-content')
 const wordPhonetics = getEl("phonetics");
+const wordPhoneticsContent = getEl('phonetics-content')
 const wordOrigin = getEl("origin");
-const firstPartOfSpeech = getEl("part-of-speech-1");
-const firstDefinition = getEl("definition-1");
-const firstExample = getEl("example-1");
-const secondPartOfSpeech = getEl("part-of-speech-2");
-const secondDefinition = getEl("definition-2");
-const secondExample = getEl("example-2");
-const thirdDefinition = getEl("definition-3");
-const firstMeaningHeading = getEl('first-meaning-heading')
-const secondMeaningHeading = getEl('second-meaning-heading')
-const thirdMeaningHeading = getEl('third-meaning-heading')
+const wordOriginContent = getEl('origin-content')
+const partOfSpeech = getEl("part-of-speech");
+const partOfSpeechContent = getEl('part-of-speech-content')
+const definition = getEl("definition");
+const definitionContent = getEl('definition-content')
+const example = getEl("example");
+const exampleContent = getEl('example-content')
+const synonym = getEl('synonym')
+const synonymContent = getEl('synonym-content')
+const antonym = getEl('antonym')
+const antonymContent = getEl('antonym-content')
+// const secondPartOfSpeech = getEl("part-of-speech-2");
+// const secondDefinition = getEl("definition-2");
+// const secondExample = getEl("example-2");
+// const thirdDefinition = getEl("definition-3");
+// const firstMeaningHeading = getEl('first-meaning-heading')
+// const secondMeaningHeading = getEl('second-meaning-heading')
+// const thirdMeaningHeading = getEl('third-meaning-heading')
 
 const searchButton = document.querySelector("#search-button");
 searchButton.addEventListener("click", handleSearchButton);
@@ -35,18 +44,26 @@ function displayWord(wordData) {
     wordPhonetics.textContent = wordData.message;
   } else {
     const word = wordData[0];
-    wordName.textContent = "Word: "
-    wordNameContent.textContent = word.word
-    wordPhonetics.textContent = `Phonetic Spelling: ${word.phonetic}`;
-    wordOrigin.textContent = `Word Origin: ${word.origin}`;
-    firstMeaningHeading.textContent = 'First Meaning:'
-    firstPartOfSpeech.textContent = `Part of Speech: ${word.meanings[0].partOfSpeech}`
-    firstDefinition.textContent = `Definition: ${word.meanings[0].definitions[0].definition}`;
-    firstExample.textContent = `Example: "${word.meanings[0].definitions[0].example}"`;
-    secondMeaningHeading.textContent = 'Second Meaning:'
-    secondPartOfSpeech.textContent = `Part of Speech: ${word.meanings[1].partOfSpeech}`;
-    secondDefinition.textContent = `Definition: ${word.meanings[1].definitions[0].definition}`;
-    secondExample.textContent = `Example: "${word.meanings[0].definitions[0].example}"`;
+    wordName.innerText = "Word: "
+    wordNameContent.innerText = word.word
+    wordPhonetics.textContent = "Phonetic spelling: "
+    wordPhoneticsContent.textContent = word.phonetic
+    wordOrigin.textContent = "Word origin: "
+    wordOriginContent.textContent = word.origin
+    partOfSpeech.textContent = "Part of speech: "
+    partOfSpeechContent.textContent = word.meanings[0].partOfSpeech
+    definition.textContent = "Definition: "
+    definitionContent.textContent = word.meanings[0].definitions[0].definition
+    example.textContent = "Example: "
+    exampleContent.textContent = `"${word.meanings[0].definitions[0].example}"`
+    synonym.textContent = "Synonym: "
+    synonymContent.textContent = word.meanings[0].definitions[0].synonyms
+    antonym.textContent = "Antonym: "
+    antonymContent.textContent = word.meanings[0].definitions[0].antonyms
+    // secondMeaningHeading.textContent = 'Second Meaning:'
+    // secondPartOfSpeech.textContent = `Part of speech: ${word.meanings[1].partOfSpeech}`;
+    // secondDefinition.textContent = `Definition: ${word.meanings[1].definitions[0].definition}`;
+    // secondExample.textContent = `Example: "${word.meanings[0].definitions[0].example}"`;
   }
 }
 

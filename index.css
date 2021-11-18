@@ -3,6 +3,10 @@ html {
     background-size: cover;
   }
 
+body {
+    text-align: center;
+}
+
   #page-header {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
@@ -27,17 +31,21 @@ html {
   font-size: 15px;
 }
 
-#word {
-  text-decoration: underline;
-}
-
 #word-info > h2,
 #meaning-1 > h2,
 #meaning-2 > h2,
 #meaning-3 > h2 {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 200;
-  width: 600px;
 }
+
+.underline-word, .continue-sentence {
+    display: inline;
+}
+
+.underline-word {
+    text-decoration: underline;
+}
+
 
 
