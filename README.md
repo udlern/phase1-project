@@ -9,7 +9,7 @@ As a user, I will be able to reset my input in the search box by clicking the re
 As a user, I will be able to like or dislike the information displayed in the browser if that was the information I needed
 As a user, I will be able to click the add a new note button to display however many note text boxes I click the button for
 As a user, I will be able to type notes into the text box
-As a user, I will be able to click the delete button and have my notes disappear from the browser
+As a user, I will be able to double click the note, get an alert and confirm that I want to delete the note, and then have my notes disappear from the browser
 As a user, I will get an error message displayed if I type in and search a word that is not available on the API
 As a user, I will get a message displayed next to the label of the word properties for any word properties that aren't available on the API
 

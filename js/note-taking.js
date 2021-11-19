@@ -1,31 +1,3 @@
-// const addBtn = document.getElementById("add");
-// addBtn.addEventListener("click", () => {
-//     addNewNote();
-// });
-
-// function addNewNote(text = "") {
-//     const note = document.createElement("div");
-//     note.innerHTML = `
-//         <div class="notes">
-//             <div class="tools">
-//                 <button class="delete">
-//                 <i>Delete</i>
-//                 </button>
-//             </div>
-//             <div class="main ${text ? "" : "hidden"}"></div>
-//             <textarea id="story" name="story"
-//             rows="5" cols="33" class="${text ? "hidden" : ""}"></textarea>
-//         </div>
-//     `
-//     const deleteBtn = note.querySelector(".delete");
-//     deleteBtn.addEventListener("click", () => {
-//         note.remove();
-//     });
-//     document.body.appendChild(note);
-// }
-
-// better version
-
 const notesContainer = document.getElementById("app");
 const addNoteButton = notesContainer.querySelector(".add-note");
 
@@ -35,26 +7,6 @@ getNotes().forEach((note) => {
   notesContainer.insertBefore(noteElement, addNoteButton); //insert the noteElement before the + sign
 });
 
-function addNewNote(text = "") {
-  const note = document.createElement("div");
-  note.innerHTML = `
-        <div class="notes">
-            <div class="tools">
-                <button class="delete">
-                <i>Delete</i>
-                </button>
-            </div>
-            <div class="main ${text ? "" : "hidden"}"></div>
-            <textarea id="note-bar" class="${text ? "hidden" : ""}"></textarea>
-            </div>
-        </div>
-    `;
-  const deleteBtn = note.querySelector(".delete");
-  deleteBtn.addEventListener("click", () => {
-    note.remove();
-  });
-  document.body.appendChild(note);
-}
 addNoteButton.addEventListener("click", () => addNote());
 
 function getNotes() {
@@ -66,11 +18,11 @@ function getNotes() {
 function getNotes() {
   //retrieve existing notes from our local storage in the client's browser
   // default the note to empty array
-  return JSON.parse(localStorage.getItem("stickynotes-notes") || "[]"); // convert json string into native js array
+  return JSON.parse(localStorage.getItem("sticky-notes-notes") || "[]"); // convert json string into native js array
 } //local storage store stuffs as string and value is also a string
 
 function saveNotes(notes) {
-  localStorage.setItem("stickynotes-notes", JSON.stringify(notes)); //match the key and stringify as json then save
+  localStorage.setItem("sticky-notes-notes", JSON.stringify(notes)); //match the key and stringify as json then save
 }
 
 function createNoteElement(id, content) {

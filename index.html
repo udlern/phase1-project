@@ -1,71 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TODANTT</title>
-    <script defer type="text/javascript" src="Sok.js"></script>
-    <script defer type="text/javascript" src="Noa.js"></script>
+    <title>Dictionary and Notepad Tool</title>
+    <script defer type="text/javascript" src="./js/dictionary-js.js"></script>
+    <script defer type="text/javascript" src="./js/note-taking.js"></script>
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1 id="page-header">
-      Welcome to your TODANTT (trusty online dictionary and note taking tool)!
-    </h1>
+    <h1 id="page-header"></h1>
     <div class="displayFlex">
-    <form id="search-form" class="search-form">
-      <label id="search-label" for="search-input"
-        >Search for information about a word ℹ️🔤</label
-      >
-      <br />
-      <input
-        id="search-input"
-        type="text"
-        name="search"
-        placeholder="Type in a word...✏️"
-      />
+      <form id="search-form" class="search-form">
+        <input
+          id="search-input"
+          type="text"
+          name="search"
+          placeholder="Type in a word...✏️"
+        />
+        <button id="reset-button">Reset Search</button>
+      </form>
       <button id="search-button">Search 🔍</button>
-    </form>
-    <button id="reset-button">Reset Search</button>
-    <div id="word-info">
-      <div id="left-format">
-      <h2 id="word" class="underline-word"></h2><h2 id="word-name-content" class="continue-sentence"></h2><br>
-      <br>
-      <h2 id="phonetics" class="underline-word"></h2><h2 id="phonetics-content" class="continue-sentence"></h2><br>
-      <br>
-      <h2 id="origin" class="underline-word"></h2><h2 id="origin-content" class="continue-sentence"></h2><br>
-      <br>
+      <div id="word-info">
+        <div class="card">
+          <h2 id="word" class="underline-word"></h2>
+          <h2 id="word-name-content" class="continue-sentence"></h2>
+          <br />
+          <br />
+          <h2 id="phonetics" class="underline-word"></h2>
+          <h2 id="phonetics-content" class="continue-sentence"></h2>
+          <br />
+          <br />
+          <h2 id="origin" class="underline-word"></h2>
+          <h2 id="origin-content" class="continue-sentence"></h2>
+          <br />
+          <br />
+          <div id="parts-of-speech-list"></div>
+        </div>
       </div>
-      <div id="middle-format">
-      <h2 id="part-of-speech" class="underline-word"></h2><h2 id="part-of-speech-content" class="continue-sentence"></h2><br>
-      <br>
-      <h2 id="definition" class="underline-word"></h2><h2 id="definition-content" class="continue-sentence"></h2><br>
-      <br>
-      <h2 id="example" class="underline-word"></h2><h2 id="example-content" class="continue-sentence"></h2><br>
-      <br>
+      <div class="likes-section">
+        <button id="like-button">👍 Helpful</button>
+        <button id="dislike-button">👎 Unhelpful</button>
       </div>
-      <div id="right-format">
-      <h2 id="synonym" class="underline-word"></h2><h2 id="synonym-content" class="continue-sentence"></h2><br>
-      <br>
-      <h2 id="antonym" class="underline-word"></h2><h2 id="antonym-content" class="continue-sentence"></h2><br>
-      </div>
-    </div>
-      <!-- <div id="meaning-2">
-        <h2 id="second-meaning-heading"></h2>
-        <h2 id="part-of-speech-2"></h2>
-        <h2 id="definition-2"></h2>
-        <h2 id="example-2"></h2>
-      </div>
-      <div id="meaning-3">
-        <h2 id="third-meaning-heading"></h2>
-        <h2 id="part-of-speech-3"></h2>
-        <h2 id="definition-3"></h2>
-        <h2 id="example-3"></h2>
-      </div> -->
-    </div>
-    <div class="likes-section">
-      <button id="like-button">👍 Helpful</button>
-      <button id="dislike-button">👎 Unhelpful</button>
-    </div>
-    <div id="app">
+      <div id="app">
         <button class="add-note" type="button">+</button>
       </div>
     </div>

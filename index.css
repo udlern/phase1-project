@@ -1,38 +1,28 @@
-#page-header {
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-}
 #search-button,
 #reset-button,
 #like-button,
 #dislike-button {
-  /* display: flex; */
-  height: 30px;
+  align-self: flex-start;
   box-sizing: border-box;
   padding: 8px;
   border: none;
   border-radius: 10px;
-  box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   resize: none;
   font-family: sans-serif;
   font-size: 14px;
   cursor: pointer;
   transition: background 0.2s;
+  margin: 5px;
+  height: 35px;
+  margin-top: 11px;
 }
 
-/* #search-label {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 19px;
-  line-height: 25pt;
-}
-
-#word-info > h2,
-#meaning-1 > h2,
-#meaning-2 > h2,
-#meaning-3 > h2 {
-  font-family: Arial, Helvetica, sans-serif;
+#word-info > .card h2 {
+  font-family: monospace;
   font-weight: 200;
-} */
+  overflow-wrap: break-word;
+}
 
 .underline-word,
 .continue-sentence {
@@ -40,12 +30,12 @@
 }
 
 .underline-word {
-  text-decoration: underline;
+  color: peru;
 }
 
 #search-input {
   display: flex;
-  height: 30px;
+  height: 35px;
   width: 160px;
   box-sizing: border-box;
   padding: 8px;
@@ -56,6 +46,7 @@
   font-family: sans-serif;
   font-size: 14px;
   transition: background 0.2s;
+  margin-top: 11px;
 }
 
 #search-button:hover,
@@ -71,16 +62,11 @@
   font-size: 14px;
 }
 
-body {
-  margin: 0;
-  background: #b4faec;
-}
-
 #app {
   display: grid;
   grid-template-columns: repeat(auto-fill, 200px);
   padding: 24px;
-  gap: 24px;
+  gap: 15px;
 }
 
 .note {
@@ -115,7 +101,20 @@ body {
   display: flex;
 }
 
-#search-button:hover, #reset-button:hover, #like-button:hover, #dislike-button:hover, #search-input:hover {
-  background: rgba(0, 0, 0, 0.2);
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(63, 62, 62, 0.2);
 }
 
+body {
+  background-image: url(./image/dog-reading.gif);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-color: lightblue;
+  height: 500px;
+}
