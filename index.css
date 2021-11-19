@@ -20,40 +20,10 @@
   transition: background 0.2s;
 }
 
-#search-label {
+/* #search-label {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 19px;
   line-height: 25pt;
-}
-#search-button,
-#reset-button,
-#like-button,
-#dislike-button {
-  /* display: flex; */
-  height: 30px;
-  box-sizing: border-box;
-  padding: 8px;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
-  resize: none;
-  font-family: sans-serif;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-#search-input {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 19px;
-}
-
-#search-button,
-#reset-button,
-#like-button,
-#dislike-button {
-  line-height: 21px;
-  font-size: 15px;
 }
 
 #word-info > h2,
@@ -62,7 +32,7 @@
 #meaning-3 > h2 {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 200;
-}
+} */
 
 .underline-word,
 .continue-sentence {
@@ -71,10 +41,6 @@
 
 .underline-word {
   text-decoration: underline;
-}
-
-#left-format {
-  width: 300px;
 }
 
 #search-input {
@@ -149,25 +115,7 @@ body {
   display: flex;
 }
 
-#search-input {
-  display: flex;
-  height: 30px;
-  width: 160px;
-  box-sizing: border-box;
-  padding: 8px;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
-  resize: none;
-  font-family: sans-serif;
-  font-size: 14px;
-  transition: background 0.2s;
-}
-
-#search-button:hover,
-#reset-button:hover,
-#like-button:hover,
-#dislike-button:hover,
-#search-input:hover {
+#search-button:hover, #reset-button:hover, #like-button:hover, #dislike-button:hover, #search-input:hover {
   background: rgba(0, 0, 0, 0.2);
 }
+
