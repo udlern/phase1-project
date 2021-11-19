@@ -10,6 +10,8 @@ As a user, I will be able to like or dislike the information displayed in the br
 As a user, I will be able to click the add a new note button to display however many note text boxes I click the button for
 As a user, I will be able to type notes into the text box
 As a user, I will be able to click the delete button and have my notes disappear from the browser
+As a user, I will get an error message displayed if I type in and search a word that is not available on the API
+As a user, I will get a message displayed next to the label of the word properties for any word properties that aren't available on the API
 
 Basic Story: a user can type in a word and get a variety of Oxford dictionary information about that word
 Core Features: user typing in the word in input text box, submitting the word, fetching word data from API, resetting input text box after submit
