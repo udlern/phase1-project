@@ -1,3 +1,29 @@
+// const addBtn = document.getElementById("add");
+// addBtn.addEventListener("click", () => {
+//     addNewNote();
+// });
+
+// function addNewNote(text = "") {
+//     const note = document.createElement("div");
+//     note.innerHTML = `
+//         <div class="notes">
+//             <div class="tools">
+//                 <button class="delete">
+//                 <i>Delete</i>
+//                 </button>
+//             </div>
+//             <div class="main ${text ? "" : "hidden"}"></div>
+//             <textarea id="story" name="story"
+//             rows="5" cols="33" class="${text ? "hidden" : ""}"></textarea>
+//         </div>
+//     `
+//     const deleteBtn = note.querySelector(".delete");
+//     deleteBtn.addEventListener("click", () => {
+//         note.remove();
+//     });
+//     document.body.appendChild(note);
+// }
+
 // better version
 
 const notesContainer = document.getElementById("app");
@@ -30,6 +56,12 @@ function addNewNote(text = "") {
   document.body.appendChild(note);
 }
 addNoteButton.addEventListener("click", () => addNote());
+
+function getNotes() {
+  //retrieve existing notes from our local storage in the client's browser
+  // default the note to empty array
+  addNoteButton.addEventListener("click", () => addNote());
+}
 
 function getNotes() {
   //retrieve existing notes from our local storage in the client's browser
