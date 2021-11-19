@@ -84,4 +84,3 @@ function handleResetButtonClick() {
 function getEl(id) {
   return document.getElementById(id);
 }
-console.log("newBranch")
