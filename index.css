@@ -1,15 +1,23 @@
-html {
-    background: url(background.jpeg) no-repeat center fixed;
-    background-size: cover;
-  }
-
-body {
-    text-align: center;
-}
-
-  #page-header {
+#page-header {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
+}
+#search-button,
+#reset-button,
+#like-button,
+#dislike-button {
+  /* display: flex; */
+  height: 30px;
+  box-sizing: border-box;
+  padding: 8px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
+  resize: none;
+  font-family: sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
 #search-label {
@@ -39,17 +47,87 @@ body {
   font-weight: 200;
 }
 
-.underline-word, .continue-sentence {
-    display: inline;
+.underline-word,
+.continue-sentence {
+  display: inline;
 }
 
 .underline-word {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 #left-format {
   width: 300px;
 }
 
+#search-input {
+  display: flex;
+  height: 30px;
+  width: 160px;
+  box-sizing: border-box;
+  padding: 8px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
+  resize: none;
+  font-family: sans-serif;
+  font-size: 14px;
+  transition: background 0.2s;
+}
 
+#search-button:hover,
+#reset-button:hover,
+#like-button:hover,
+#dislike-button:hover,
+#search-input:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
 
+#paragraph {
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+body {
+  margin: 0;
+  background: #b4faec;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  padding: 24px;
+  gap: 24px;
+}
+
+.note {
+  height: 200px;
+  box-sizing: border-box;
+  padding: 16px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
+  resize: none;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.add-note {
+  height: 200px;
+  border: none;
+  outline: none;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  font-size: 120px;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.add-note:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.displayFlex {
+  display: flex;
+}
