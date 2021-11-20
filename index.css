@@ -36,7 +36,7 @@
 #search-input {
   display: flex;
   height: 35px;
-  width: 160px;
+  width: 175px;
   box-sizing: border-box;
   padding: 8px;
   border: none;
@@ -105,7 +105,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 700px;
   margin: auto;
-  text-align: center;
+  text-align: left;
 }
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(63, 62, 62, 0.2);
@@ -117,4 +117,8 @@ body {
   background-position: left;
   background-color: lightblue;
   height: 500px;
+}
+
+.highlight-no-messages {
+  color: lightseagreen;
 }
