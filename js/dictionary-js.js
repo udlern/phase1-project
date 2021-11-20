@@ -1,5 +1,3 @@
-// ALERT: get syn and ant to be on different lines, and maybe push all text to the left //
-
 // Defining global variables
 const BASE_URL = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 const wordName = getEl("word");
@@ -28,6 +26,7 @@ function handleSearchButton(event) {
     .catch((error) => alert("Something went wrong!\n" + error));
 }
 
+// displayWord Function
 function displayWord(wordData) {
   // If data empty, then return this message from API
   if (!Array.isArray(wordData)) {
@@ -46,12 +45,14 @@ function displayWord(wordData) {
 
   // If meanings array is empty, then return this message added to div
   if (word.meanings.length === 0) {
-    partsOfSpeechList.textContent = "Sorry, no word meanings available!";
+    const noMeanings = createEl("h2");
+    noMeanings.className = "highlight-no-messages";
+    noMeanings.textContent = "Sorry, no word meanings available!";
+    partsOfSpeechList.append(noMeanings);
     return;
   }
   // For each through meaning array, create a parts of speech container, header, and content and, append to div
   word.meanings.forEach((meaning) => {
-    console.log("meaning: ", meaning);
     const partOfSpeechContainer = createEl("div");
     partOfSpeechContainer.className = "part-of-speech-container";
     const partOfSpeechHeader = createEl("h2");
@@ -67,12 +68,14 @@ function displayWord(wordData) {
 
     // If definitions array is empty, return this message added to div
     if (meaning.definitions.length === 0) {
-      partOfSpeechContainer.textContent = "Sorry, no definitions available!";
+      const noDefinitions = createEl("h2");
+      noDefinitions.className = "highlight-no-messages";
+      noDefinitions.textContent = "Sorry, no definitions available!";
+      partOfSpeechContainer.append(noDefinitions);
       return;
     }
     // Still part of the for each loop, looping through definitions array and creating definitions container, header, and content, and append to div
     meaning.definitions.forEach((definition) => {
-      console.log("definition: ", definition);
       const definitionsContainer = createEl("div");
       definitionsContainer.className = "definitions-container";
       const definitionsHeader = createEl("h2");
@@ -95,52 +98,63 @@ function displayWord(wordData) {
       examplesContent.id = "examples-content";
       examplesContent.className = "continue-sentence";
       examplesHeader.textContent = "Example: ";
-      examplesContent.textContent = `"${definition.example}"` + " ";
+      examplesContent.textContent = `"${definition.example}", `;
       examplesContainer.append(examplesHeader, examplesContent);
       partOfSpeechContainer.append(examplesContainer);
 
-      // Creating synonym div and antonym div
+      // Creating synonym div and antonym container div
       const synonymContainer = createEl("div");
       synonymContainer.className = "synonym-container";
       const antonymContainer = createEl("div");
       antonymContainer.className = "antonym-container";
-      // If synonym array is empty, return this message added to div
+      // If synonym array is empty, return this message added to h2 and append to div
       if (definition.synonyms.length === 0) {
-        synonymContainer.textContent = "Sorry, no synonyms available!";
+        const noSynonym = createEl("h2");
+        noSynonym.className = "highlight-no-messages";
+        noSynonym.textContent = "Sorry, no synonyms available!";
+        synonymContainer.append(noSynonym);
+        partOfSpeechContainer.append(synonymContainer);
+      } else {
+        // Creating synonym header, id, className, and textContent
+        const synonymHeader = createEl("h2");
+        synonymHeader.id = "synonym-header";
+        synonymHeader.className = "underline-word";
+        synonymHeader.textContent = "Synonyms: ";
+        synonymContainer.append(synonymHeader);
+        // For each loop through synonyms array and create synonym container and content, and append to div
+        definition.synonyms.forEach((synonym) => {
+          const synonymContent = createEl("h2");
+          synonymContent.id = "synonym-content";
+          synonymContent.className = "continue-sentence";
+          synonymContent.textContent = synonym + ", ";
+          synonymContainer.append(synonymContent);
+        });
+        partOfSpeechContainer.append(synonymContainer);
       }
-      // Creating synonym header, id, className, and textContent
-      const synonymHeader = createEl("h2");
-      synonymHeader.id = "synonym-header";
-      synonymHeader.className = "underline-word";
-      synonymHeader.textContent = "Synonyms: ";
-      // For loop through synonyms array and create synonym container, header, content, and append to div
-      definition.synonyms.forEach((synonym) => {
-        const synonymContent = createEl("h2");
-        synonymContent.id = "synonym-content";
-        synonymContent.className = "continue-sentence";
-        synonymContent.textContent = synonym + " ";
-        synonymContainer.append(synonymHeader, synonymContent);
-      });
-      partOfSpeechContainer.append(synonymContainer);
-
-      // If antonym array is empty, return this message and add to div
+      // If antonym array is empty, return this message added to h2 and append to div
       if (definition.antonyms.length === 0) {
-        antonymContainer.textContent = "Sorry, no antonyms available!";
+        const noAntonym = createEl("h2");
+        noAntonym.className = "highlight-no-messages";
+        noAntonym.textContent = "Sorry, no antonyms available!";
+        antonymContainer.append(noAntonym);
+        partOfSpeechContainer.append(antonymContainer);
+      } else {
+        // Creating antonym header, id, className, and textContent
+        const antonymHeader = createEl("h2");
+        antonymHeader.id = "antonym-header";
+        antonymHeader.className = "underline-word";
+        antonymContainer.append(antonymHeader);
+        // For each through antonym array and create antonym container and content, and append to div
+        definition.antonyms.forEach((antonym) => {
+          const antonymContent = createEl("h2");
+          antonymContent.id = "antonym-content";
+          antonymContent.className = "continue-sentence";
+          antonymHeader.textContent = "Antonyms: ";
+          antonymContent.textContent = antonym + ", ";
+          antonymContainer.append(antonymContent);
+        });
+        partOfSpeechContainer.append(antonymContainer);
       }
-      // Creating antonym header, id, className, and textContent
-      const antonymHeader = createEl("h2");
-      antonymHeader.id = "antonym-header";
-      antonymHeader.className = "underline-word";
-      // For each through antonym array and create antonym container, header, content, and append to div
-      definition.antonyms.forEach((antonym) => {
-        const antonymContent = createEl("h2");
-        antonymContent.id = "antonym-content";
-        antonymContent.className = "continue-sentence";
-        antonymHeader.textContent = "Antonyms: ";
-        antonymContent.textContent = antonym + " ";
-        antonymContainer.append(antonymHeader, antonymContent);
-      });
-      partOfSpeechContainer.append(antonymContainer);
     });
   });
 }
@@ -152,10 +166,11 @@ likeButton.addEventListener("click", handleLikeButtonClick);
 function handleLikeButtonClick() {
   if (likeButton.style.backgroundColor === "green") {
     likeButton.style.backgroundColor = "";
+    dislikeButton.disabled = false;
   } else {
     likeButton.style.backgroundColor = "green";
+    dislikeButton.disabled = true;
   }
-  dislikeButton.disabled = true;
 }
 
 // Dislike Button Event Listener
@@ -165,10 +180,11 @@ dislikeButton.addEventListener("click", handleDislikeButton);
 function handleDislikeButton() {
   if (dislikeButton.style.backgroundColor === "red") {
     dislikeButton.style.backgroundColor = "";
+    likeButton.disabled = false;
   } else {
     dislikeButton.style.backgroundColor = "red";
+    likeButton.disabled = true;
   }
-  likeButton.disabled = true;
 }
 
 // Reset Button Event Listener
