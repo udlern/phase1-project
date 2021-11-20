@@ -72,8 +72,7 @@ function displayWord(wordData) {
       noDefinitions.className = "highlight-no-messages";
       noDefinitions.textContent = "Sorry, no definitions available!";
       partOfSpeechContainer.append(noDefinitions);
-      return;
-    }
+    } else {
     // Still part of the for each loop, looping through definitions array and creating definitions container, header, and content, and append to div
     meaning.definitions.forEach((definition) => {
       const definitionsContainer = createEl("div");
@@ -156,7 +155,7 @@ function displayWord(wordData) {
         partOfSpeechContainer.append(antonymContainer);
       }
     });
-  });
+  }});
 }
 
 // Like Button Event Listener
