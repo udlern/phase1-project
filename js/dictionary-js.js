@@ -6,7 +6,7 @@ const wordPhonetics = getEl("phonetics");
 const wordPhoneticsContent = getEl("phonetics-content");
 const wordOrigin = getEl("origin");
 const wordOriginContent = getEl("origin-content");
-const meaningsList = getEl("meanings-list");
+const partsOfSpeechList = getEl("parts-of-speech-list");
 
 //Search Button Event Listener
 const searchButton = document.querySelector("#search-button");
@@ -52,13 +52,13 @@ function displayWord(wordData) {
     const noMeanings = createEl("h2");
     noMeanings.className = "highlight-no-messages";
     noMeanings.textContent = "Sorry, no word meanings available!";
-    meaningsList.append(noMeanings);
+    partsOfSpeechList.append(noMeanings);
     return;
   }
   // For each through meaning array, create a parts of speech container, header, and content and, append to div
   word.meanings.forEach((meaning) => {
-    const meaningsContainer = createEl("div");
-    meaningsContainer.className = "part-of-speech-container";
+    const partOfSpeechContainer = createEl("div");
+    partOfSpeechContainer.className = "part-of-speech-container";
     const partOfSpeechHeader = createEl("h2");
     partOfSpeechHeader.id = "part-of-speech-header";
     partOfSpeechHeader.className = "underline-word";
@@ -67,15 +67,15 @@ function displayWord(wordData) {
     partOfSpeechContent.className = "continue-sentence";
     partOfSpeechHeader.textContent = "Part of speech: ";
     partOfSpeechContent.textContent = meaning.partOfSpeech;
-    meaningsContainer.append(partOfSpeechHeader, partOfSpeechContent);
-    meaningsList.append(meaningsContainer);
+    partOfSpeechContainer.append(partOfSpeechHeader, partOfSpeechContent);
+    partsOfSpeechList.append(partOfSpeechContainer);
 
     // If definitions array is empty, return this message added to div
     if (meaning.definitions.length === 0) {
       const noDefinitions = createEl("h2");
       noDefinitions.className = "highlight-no-messages";
       noDefinitions.textContent = "Sorry, no definitions available!";
-      meaningsContainer.append(noDefinitions);
+      partOfSpeechContainer.append(noDefinitions);
     } else {
       // Still part of the for each loop, looping through definitions array and creating definitions container, header, and content, and append to div
       meaning.definitions.forEach((definition) => {
@@ -90,7 +90,7 @@ function displayWord(wordData) {
         definitionsHeader.textContent = "Definition: ";
         definitionsContent.textContent = definition.definition;
         definitionsContainer.append(definitionsHeader, definitionsContent);
-        meaningsContainer.append(definitionsContainer);
+        partOfSpeechContainer.append(definitionsContainer);
         // Still part of the for each loop, looping through definitions array and creating examples container, header, and content, and append to div
         const examplesContainer = createEl("div");
         examplesContainer.className = "examples-container";
@@ -105,7 +105,7 @@ function displayWord(wordData) {
           ? `"${definition.example}."`
           : "No example provided.";
         examplesContainer.append(examplesHeader, examplesContent);
-        meaningsContainer.append(examplesContainer);
+        partOfSpeechContainer.append(examplesContainer);
 
         // Creating synonym div and antonym container div
         const synonymContainer = createEl("div");
@@ -118,7 +118,7 @@ function displayWord(wordData) {
           noSynonym.className = "highlight-no-messages";
           noSynonym.textContent = "Sorry, no synonyms available!";
           synonymContainer.append(noSynonym);
-          meaningsContainer.append(synonymContainer);
+          partOfSpeechContainer.append(synonymContainer);
         } else {
           // Creating synonym header, id, className, and textContent
           const synonymHeader = createEl("h2");
@@ -134,7 +134,7 @@ function displayWord(wordData) {
             synonymContent.textContent = synonym + ", ";
             synonymContainer.append(synonymContent);
           });
-          meaningsContainer.append(synonymContainer);
+          partOfSpeechContainer.append(synonymContainer);
         }
         // If antonym array is empty, return this message added to h2 and append to div
         if (definition.antonyms.length === 0) {
@@ -142,7 +142,7 @@ function displayWord(wordData) {
           noAntonym.className = "highlight-no-messages";
           noAntonym.textContent = "Sorry, no antonyms available!";
           antonymContainer.append(noAntonym);
-          meaningsContainer.append(antonymContainer);
+          partOfSpeechContainer.append(antonymContainer);
         } else {
           // Creating antonym header, id, className, and textContent
           const antonymHeader = createEl("h2");
@@ -158,7 +158,7 @@ function displayWord(wordData) {
             antonymContent.textContent = antonym + ", ";
             antonymContainer.append(antonymContent);
           });
-          meaningsContainer.append(antonymContainer);
+          partOfSpeechContainer.append(antonymContainer);
         }
       });
     }
